@@ -1,16 +1,1 @@
-cd /notebooks/A2FYP/time_dependent_nbr
-source /notebooks/A2FYP/.venv/bin/activate
 
-python - <<'PY'
-import optuna
-from pathlib import Path
-
-prefix = "tifu_profile_dunnhumby_tifuknn_time_days_next_ts"
-dbPath = Path("/notebooks/A2FYP/time_dependent_nbr/results") / f"{prefix}.db"
-storage = f"sqlite:///{dbPath}"
-study = optuna.load_study(study_name=prefix, storage=storage)
-
-print("Trials saved:", len(study.trials))
-print("Best value:", study.best_value)
-print("Best params:", study.best_params)
-PY
