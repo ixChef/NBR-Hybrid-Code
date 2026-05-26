@@ -3,6 +3,3 @@ nix:
 nix develop -c code .
 
 nix develop -c bash -i
-
-
-Python:
